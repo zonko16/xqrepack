@@ -65,12 +65,9 @@ NVRAM
 sed -i "s@root:[^:]*@root:${ROOTPW}@" "$FSDIR/etc/shadow"
 
 # modify tx_power to match EU power limits
-sed -i '/tx_power=14/tx_power=20/' "$FSDIR/lib/wifi/qcawificfg80211.sh"
-sed -i '/tx_power=16/tx_power=23/' "$FSDIR/lib/wifi/qcawificfg80211.sh"
-sed -i '/tx_power=23/tx_power=30/' "$FSDIR/lib/wifi/qcawificfg80211.sh"
-sed -i '/tx_power=14/tx_power=20/' "$FSDIR/lib64/wifi/qcawificfg80211.sh"
-sed -i '/tx_power=16/tx_power=23/' "$FSDIR/lib64/wifi/qcawificfg80211.sh"
-sed -i '/tx_power=23/tx_power=30/' "$FSDIR/lib64/wifi/qcawificfg80211.sh"
+sed -i '/max_power=14/tx_power=20/' "$FSDIR/lib/wifi/qcawificfg80211.sh"
+sed -i '/max_power=16/tx_power=23/' "$FSDIR/lib/wifi/qcawificfg80211.sh"
+sed -i '/max_power=23/tx_power=30/' "$FSDIR/lib/wifi/qcawificfg80211.sh"
 
 # stop phone-home in web UI
 cat <<JS >> "$FSDIR/www/js/miwifi-monitor.js"
